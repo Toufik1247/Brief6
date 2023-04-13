@@ -23,6 +23,7 @@ cp .env.example .env
 
 2. Add your TMDB API key in the `.env` file.
 
+
 3. Install the project dependencies:
 
 ```
