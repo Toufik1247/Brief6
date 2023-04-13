@@ -1,8 +1,6 @@
 # Live version
 
-Check out the live demo by clicking the link below (the link will open in a new window):
-
-* [Netflix Clone](https://main.d2ihx0gu7qo94w.amplifyapp.com){:target="_blank"}
+* [Netflix Clone](https://main.d2ihx0gu7qo94w.amplifyapp.com)
 
 
 # Project Title
