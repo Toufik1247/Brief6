@@ -1,12 +1,31 @@
-Launch the project : 
+# Live version
 
-1.
+* [Netflix Clone](https://main.d2ihx0gu7qo94w.amplifyapp.com)
 
+
+# Project Title
+
+Netflix Clone
+
+## Description
+
+A Netflix clone realized during my Javascript Training at Simplon.co
+
+## Getting Started
+
+### Installing
+
+```
 cp .env.example .env
-add your TMDB API key in the .env file
+```
+* add your TMDB API key in the .env file
 
-2. 
-
+```
 npm install
+```
 
-3. npx parcel index.html
+### Executing program
+
+```
+npx parcel index.html
+```
