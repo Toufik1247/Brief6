@@ -1,21 +1,28 @@
-// import { test } from "./fetcher.js";
-import { trendingMoviesToday } from "./src/scripts/fetcher.js";
-import { trendingMoviesWeek } from "./src/scripts/fetcher.js";
-import { discoverMovies } from "./src/scripts/fetcher.js";
-
+import { createCarousel } from "./src/scripts/fetcher.js";
 import { initNavBarMenu } from "./src/scripts/header.js";
 import { initCarousel } from "./src/scripts/carousel.js";
 import { modal } from "./src/scripts/modal.js";
 
+const apiKey = process.env.API_KEY
+
+const discoverDiv = '.discover'
+const trendingTodayDiv = '.trendingMoviesToday'
+const trendingWeekDiv = '.trendingMoviesWeek'
+const discoverUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=fr-FR`
+const trendingTodayUrl = `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=fr-FR`
+const trendingWeekUrl = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=fr-FR`
 
 
-initNavBarMenu()
-trendingMoviesToday()
-trendingMoviesWeek()
-discoverMovies()
+async function initHomePage() {
+    // Attendre la récupération des données via l'api
+    await createCarousel(trendingTodayDiv, trendingTodayUrl)
+    await createCarousel(discoverDiv, discoverUrl)
+    await createCarousel(trendingWeekDiv, trendingWeekUrl)
+    // puis initialiser le carousel
+    initCarousel()
+    initNavBarMenu()
+}
 
-
-
-
-setTimeout(initCarousel, 150)
-setTimeout(modal(), 200)
+initHomePage()
+// Initialisation du modal
+modal()
