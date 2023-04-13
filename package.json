@@ -9,6 +9,7 @@
     "sass": "^1.62.0"
   },
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
   }
 }
