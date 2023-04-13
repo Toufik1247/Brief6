@@ -1,6 +1,4 @@
-import 'dotenv/config';
-
-const apiKey = process.env.API_KEY
+const apiKey = process.env.PARCEL_API_KEY
 
 async function fetchMovies(url) {
     const response = await fetch(url);
@@ -41,7 +39,7 @@ function setupModalBtn(movie, thumbNailPath) {
     return btn;
 }
 
-export async function createCarousel(div,url) {
+export async function createCarousel(div, url) {
     try {
         const thumbNailPath = 'https://image.tmdb.org/t/p/w300';
         const carouselDemo = document.querySelector(div);

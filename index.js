@@ -3,7 +3,7 @@ import { initNavBarMenu } from "./src/scripts/header.js";
 import { initCarousel } from "./src/scripts/carousel.js";
 import { modal } from "./src/scripts/modal.js";
 
-const apiKey = process.env.API_KEY
+const apiKey = process.env.PARCEL_API_KEY
 
 const discoverDiv = '.discover'
 const trendingTodayDiv = '.trendingMoviesToday'
