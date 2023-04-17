@@ -11,6 +11,12 @@ function createImageElement(src) {
     return img;
 }
 
+function createDescElement(movieDesc) {
+    const desc = document.createElement('p');
+    desc.innerHTML = movieDesc;
+    return desc
+}
+
 function setupModalBtn(movie, thumbNailPath) {
     const btn = document.createElement('button');
     btn.classList.add('js-modal-trigger');
@@ -19,20 +25,39 @@ function setupModalBtn(movie, thumbNailPath) {
 
     btn.addEventListener('click', async () => {
         const movieDetails = await fetchMovies(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${apiKey}&language=fr-FR`);
+        console.log(movieDetails)
         const thumbNailImgSrc = thumbNailPath + movieDetails.poster_path;
-        const carouselBody = document.querySelector('.modal-card-body');
+        const modalCardBody = document.querySelector('.modal-card-body');
         const imgModalElement = document.querySelector('.imgModal');
         const target = btn.getAttribute('data-target');
         const modal = document.getElementById(target);
-        document.querySelector('.modal-card-title').innerHTML = movie.title;
+        document.querySelector('.modal-card-title').innerHTML = movieDetails.title;
         modal.classList.add('is-active');
+        const descModalElement = document.querySelector('.descModal')
+
 
         if (imgModalElement === null) {
+            const descModal = createDescElement(movieDetails.overview)
+            descModal.classList.add('.descModal')
+
+            descModal.innerHTML = movieDetails.overview
+            console.log('1ER')
             const imgModal = createImageElement(thumbNailImgSrc);
             imgModal.classList.add('imgModal');
-            carouselBody.appendChild(imgModal);
+            modalCardBody.appendChild(imgModal);
+            modalCardBody.appendChild(descModal)
+
+            console.log(descModal)
+
         } else {
+            console.log('2EME')
             imgModalElement.src = thumbNailImgSrc;
+            const descModal = createDescElement(movieDetails.overview)
+            descModal.classList.add('.descModal')
+            console.log(descModal.innerText)
+            console.log(typeof descModal)
+            console.log(descModal)
+            descModal.innerText = movieDetails.overview
         }
     });
 
