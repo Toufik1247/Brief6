@@ -1,6 +1,6 @@
 const apiKey = process.env.PARCEL_API_KEY
 
-async function fetchMovies(url) {
+export async function fetchMovies(url) {
     const response = await fetch(url);
     return await response.json();
 }
@@ -17,7 +17,7 @@ function createDescElement(movieDesc) {
     return desc
 }
 
-function setupModalBtn(movie, thumbNailPath) {
+export function setupModalBtn(movie, thumbNailPath) {
     const btn = document.createElement('button');
     btn.classList.add('js-modal-trigger');
     btn.setAttribute('data-target', 'modal');
@@ -38,7 +38,7 @@ function setupModalBtn(movie, thumbNailPath) {
 
         if (imgModalElement === null) {
             const descModal = createDescElement(movieDetails.overview)
-            descModal.classList.add('.descModal')
+            descModal.classList.add('descModal')
 
             descModal.innerHTML = movieDetails.overview
             console.log('1ER')
@@ -53,11 +53,11 @@ function setupModalBtn(movie, thumbNailPath) {
             console.log('2EME')
             imgModalElement.src = thumbNailImgSrc;
             const descModal = createDescElement(movieDetails.overview)
-            descModal.classList.add('.descModal')
+            descModal.classList.add('descModal')
             console.log(descModal.innerText)
             console.log(typeof descModal)
             console.log(descModal)
-            descModal.innerText = movieDetails.overview
+            descModalElement.innerText = movieDetails.overview
         }
     });
 

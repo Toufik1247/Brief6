@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    <section class="hero heroBg is-large">
+    <section class="hero is-large">
         <!-- Hero head: will stick at the top -->
-        <div class="hero-head ">
+        <div class="heroHead">
             <nav class="navbar is-fixed-top has-background-black is-black">
                 <div class="container">
                     <div class="navbar-brand">
@@ -39,7 +39,7 @@
                             </a>
                             <div class="navbar-item field">
                                 <p class="control has-icons-right">
-                                    <input class="input" type="search" placeholder="Recherchez un film...">
+                                    <input id="search" class="input" type="text" placeholder="Recherchez un film...">
                                     <span class="icon is-small is-right">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             viewBox="0 0 24 24">
@@ -55,8 +55,18 @@
             </nav>
         </div>
 
+        <div class="overlay" id="overlay">
+            <div class="moviePosters" id="moviePosters"></div>
+            <nav class="paginations" role="navigation" aria-label="pagination">
+                <!-- <a class="paginations-previous" id="previous-page">Précédent</a>
+              <a class="paginations-next" id="next-page">Suivant</a> -->
+                <ul class="paginations-list" id="paginations-list"></ul>
+            </nav>
+        </div>
+
+
         <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
+        <div class="heroBg hero-body">
             <div class="container has-text-centered">
                 <h1 class="title has-text-white">
                     Title
@@ -68,7 +78,7 @@
         </div>
     </section>
 
-    <section class="section has-background-black">
+    <section class="section pageContent has-background-black">
         <div class="container">
             <h1 class="has-text-white is-size-3">Tendance aujourd'hui</h1>
             <div id="carousel-demo" class="carousel is-clipped trendingMoviesToday">
