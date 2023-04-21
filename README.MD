@@ -1,6 +1,6 @@
 # Live version
 
-* [Netflix Clone](https://main.d2ihx0gu7qo94w.amplifyapp.com)
+* [Netflix Clone](https://toufikprojetnetflix.netlify.app/)
 
 
 # Project Title
