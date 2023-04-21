@@ -1,3 +1,5 @@
+// Modal du framework Bulma CSS
+
 export function modal() {
 
     document.addEventListener('DOMContentLoaded', () => {

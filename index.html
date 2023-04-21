@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="./src/styles/style.scss">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
     <section class="hero is-large">
-        <!-- Hero head: will stick at the top -->
         <div class="heroHead">
             <nav class="navbar is-fixed-top has-background-black is-black">
                 <div class="container">
                     <div class="navbar-brand">
-                        <h1 class=" is-family-code is-flex is-align-items-center is-size-2 has-text-weight-semibold	">
-                            Netflix</h1>
-                        <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                        <a href="/">
+                            <h1 class="logo is-flex is-align-items-center is-size-2 has-text-weight-semibold">
+                                Netflix
+                            </h1>
+                        </a>
+                        <span id="burgerMenu" class="navbar-burger burger" data-target="navbarMenuHeroA">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -28,18 +33,10 @@
                     </div>
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-end">
-                            <a class="navbar-item is-active">
-                                Home
-                            </a>
-                            <a class="navbar-item">
-                                Examples
-                            </a>
-                            <a class="navbar-item">
-                                Documentation
-                            </a>
                             <div class="navbar-item field">
                                 <p class="control has-icons-right">
-                                    <input id="search" class="input" type="text" placeholder="Recherchez un film...">
+                                    <input id="search" class="input" type="text" placeholder="Recherchez un film..."
+                                        autocomplete="off">
                                     <span class="icon is-small is-right">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             viewBox="0 0 24 24">
@@ -54,85 +51,86 @@
                 </div>
             </nav>
         </div>
-
         <div class="overlay" id="overlay">
             <div class="moviePosters" id="moviePosters"></div>
             <nav class="paginations" role="navigation" aria-label="pagination">
-                <!-- <a class="paginations-previous" id="previous-page">Précédent</a>
-              <a class="paginations-next" id="next-page">Suivant</a> -->
                 <ul class="paginations-list" id="paginations-list"></ul>
             </nav>
         </div>
-
-
-        <!-- Hero content: will be in the middle -->
         <div class="heroBg hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title has-text-white">
-                    Title
-                </h1>
-                <h2 class="subtitle has-text-white">
-                    Subtitle
-                </h2>
-            </div>
         </div>
     </section>
-
     <section class="section pageContent has-background-black">
         <div class="container">
-            <h1 class="has-text-white is-size-3">Tendance aujourd'hui</h1>
+            <h1 class="has-text-white is-size-3 has-text-weight-bold">Tendance aujourd'hui</h1>
             <div id="carousel-demo" class="carousel is-clipped trendingMoviesToday">
             </div>
         </div>
         <div class="container">
-            <h1 class="has-text-white is-size-3">Tendance cette semaine</h1>
+            <h1 class="has-text-white is-size-3 has-text-weight-bold">Tendance cette semaine</h1>
             <div id="carousel-demo" class="carousel is-clipped trendingMoviesWeek">
             </div>
         </div>
         <div class="container">
-            <h1 class="has-text-white is-size-3">Découvrir</h1>
+            <h1 class="has-text-white is-size-3 has-text-weight-bold">Découvrir</h1>
             <div id="carousel-demo" class="carousel is-clipped discover">
             </div>
         </div>
-
     </section>
-
     <button class="js-modal-trigger" data-target="modal">
         Open JS example modal
     </button>
-
-    <div class="modal" id="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
+    <div class="modal has-text-white-bis" id="modal">
+        <div class="modal-background has-background-black"></div>
+        <div class="modal-card ">
+            <header class="modal-card-head has-background-dark is-justify-content-flex-end">
                 <button class="delete" aria-label="close"></button>
             </header>
-            <section class="modal-card-body">
-                <!-- Content ... -->
+            <section class="modal-card-body has-background-dark">
+                <div class="modalDetails  is-flex is-flex-direction-column is-align-items-center">
+                    <p
+                        class="modal-card-title my-3 has-text-weight-bold has-text-centered has-text-white-bis is-size-1 is-size-3-mobile is-capitalized">
+                    </p>
+                    <div class="columns  is-align-items-center mt-5"
+                        style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
+                        <div class="column has-text-centered py-0 mb-5 mt-5">
+                            <ul>
+                                <li class=" pegi list-item has-text-weight-semibold my-1">Tous public</li>
+                                <li class="releaseDate list-item my-1 has-text-weight-semibold"></li>
+                                <ul
+                                    class="genres is-flex is-flex-direction-row is-justify-content-center is-align-items-center has-text-weight-semibold">
+                                </ul>
+                                <li class=" runtime list-item my-1 has-text-weight-semibold"></li>
+                            </ul>
+                        </div>
+                        <div
+                            class="column has-text-centered py-0 mb-5 mt-5 is-flex is-justify-content-center is-align-items-center is-flex-direction-column">
+                            <div class="box has-text-centered my-0 has-background-dark">
+                                <p class="has-text-white-bis has-text-weight-semibold is-size-5 is-size-4-mobile">Note
+                                </p>
+                                <p class="voteAverage title is-3 has-text-primary has-text-weight-semibold is-size-4">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="title has-text-centered has-text-white-bis ">Synopsys</h1>
+                </div>
             </section>
-            <!-- <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button">Cancel</button>
-            </footer> -->
         </div>
     </div>
     <footer class="footer has-background-black">
         <div class="content has-text-centered">
             <p class="has-text-white">
-                <strong>Netflix Clone</strong> by <a href="https://github.com/Toufik1247">Toufik SAID</a>.
+                <i class="fas fa-copyright"></i> 2023
+                <strong>Netflix Clone</strong> made with <i class="fas fa-heart" style="color: #ff0000;"></i> by <a
+                    href="https://github.com/Toufik1247" target="_blank">Toufik SAID</a>
             </p>
         </div>
     </footer>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
     <script type="module" src="index.js"></script>
 
 </body>
 
 </html>
-
-
-
-
-
-}

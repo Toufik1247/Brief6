@@ -29,6 +29,14 @@ button {
     background-color: transparent;
 }
 
-img {
+
+.imgMovie {
     cursor: pointer;
+    transition: transform .3s;
+}
+
+.imgMovie:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }

@@ -2,7 +2,7 @@ import { createCarousel } from "./src/scripts/fetcher.js";
 import { initNavBarMenu } from "./src/scripts/header.js";
 import { initCarousel } from "./src/scripts/carousel.js";
 import { modal } from "./src/scripts/modal.js";
-import { filter } from "./src/scripts/filter.js";
+import { search } from "./src/scripts/search.js";
 
 const apiKey = process.env.PARCEL_API_KEY
 
@@ -19,12 +19,11 @@ async function initHomePage() {
     await createCarousel(trendingTodayDiv, trendingTodayUrl)
     await createCarousel(discoverDiv, discoverUrl)
     await createCarousel(trendingWeekDiv, trendingWeekUrl)
-    // puis initialiser le carousel
+    // puis initialiser le carousel, la navbar et la fonction de recherche
     initCarousel()
     initNavBarMenu()
-    filter()
+    search()
 }
 
 initHomePage()
-// Initialisation du modal
 modal()
